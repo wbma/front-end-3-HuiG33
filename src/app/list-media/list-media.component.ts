@@ -11,8 +11,6 @@ export class ListMediaComponent implements OnInit {
   printThis: string;
   mediaArray: any;
 
-  //thumbNail: any;
-
   constructor(public mediaService: MediaService) {
   }
 
@@ -29,7 +27,7 @@ export class ListMediaComponent implements OnInit {
       });
 
       console.log(this.mediaArray);
-      
+
       /*this.mediaArray.forEach((media, index) => {
         const temp = media.filename.split('.');
         const thumbName = temp[0] + '-tn320.png';
@@ -37,7 +35,7 @@ export class ListMediaComponent implements OnInit {
       });*/
 
       /*const temp = this.mediaArray[0].filename.split('.');
-      this.thumbNail = (temp[0] + '-tn320.png');*/
+      console.log(temp[0] + '-tn320.png');*/
     });
   }
 
