@@ -5,7 +5,7 @@
 <ul class="list-group list-group-flush">
   <li class="list-group-item" *ngFor="let media of mediaArray">
     <img class="card-img-top" [src]="mediaService.mediaUrl + media.thumbnail" alt="Card image cap">
-    <div class="card-block">
+    <div class="card-body">
     <h4 class="card-title">{{media.title}}</h4>
     <p class="card-text">{{media.description}}</p>
     </div>
