@@ -1,7 +1,7 @@
 <div *ngFor="let stop of stopArray">
-  <p>{{stop.name}}</p>
-  <ul>
-    <li *ngFor="let route of stop.patterns">
+  <h4>{{stop.name}}</h4>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let route of stop.patterns">
       <p>{{route.name}}</p>
     </li>
   </ul>
