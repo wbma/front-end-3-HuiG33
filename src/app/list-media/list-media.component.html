@@ -1,14 +1,22 @@
+<div *ngFor="let stop of stopArray">
+  <p>{{stop.name}}</p>
+  <ul>
+    <li *ngFor="let route of stop.patterns">
+      <p>{{route.name}}</p>
+    </li>
+  </ul>
+</div>
+
 <p>
   {{printThis}}
 </p>
-<div class="card" style="width: 20rem;">
-<ul class="list-group list-group-flush">
-  <li class="list-group-item" *ngFor="let media of mediaArray">
-    <img class="card-img-top" [src]="mediaService.mediaUrl + media.thumbnail" alt="Card image cap">
+
+<div class="card-deck">
+  <div class="card" *ngFor="let media of mediaArray">
+    <img class="card-img-top" [src]="mediaService.mediaUrl + media.thumbnail" [alt]="media.title">
     <div class="card-body">
-    <h4 class="card-title">{{media.title}}</h4>
-    <p class="card-text">{{media.description}}</p>
+      <h5 class="card-title">{{media.title}}</h5>
+      <p class="card-text">{{media.description}}</p>
     </div>
-  </li>
-</ul>
+  </div>
 </div>

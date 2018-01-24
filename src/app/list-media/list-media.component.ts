@@ -1,17 +1,22 @@
 import {Component, OnInit} from '@angular/core';
 import {MediaService} from '../services/media.service';
+import {DigitransitService} from '../services/digitransit.service';
 
 @Component({
   selector: 'app-list-media',
   templateUrl: './list-media.component.html',
-  styleUrls: ['./list-media.component.scss']
+  styleUrls: ['./list-media.component.scss'],
 })
 export class ListMediaComponent implements OnInit {
 
   printThis: string;
   mediaArray: any;
 
-  constructor(public mediaService: MediaService) {
+  stopArray: any;
+
+  constructor(
+    public mediaService: MediaService,
+    private digitransitService: DigitransitService) {
   }
 
   ngOnInit() {
@@ -36,6 +41,12 @@ export class ListMediaComponent implements OnInit {
 
       /*const temp = this.mediaArray[0].filename.split('.');
       console.log(temp[0] + '-tn320.png');*/
+    });
+
+    // console.log(this.digitransitService.getRoutes('Gransinmäki'));
+    this.digitransitService.getRoutes('Gransinmäki').subscribe(response => {
+      console.log(response.data.stops);
+      this.stopArray = response.data.stops;
     });
   }
 
